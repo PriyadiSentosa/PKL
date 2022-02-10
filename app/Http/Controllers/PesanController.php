@@ -76,7 +76,7 @@ class PesanController extends Controller
         $pesanan->jumlah_harga = $pesanan->jumlah_harga + $barang->harga * $request->jumlah_pesan;
         $pesanan->update();
 
-        // Alert::success('Pesanan Sukses Masuk Keranjang', 'Success');
+        Alert::success('Pesanan Sukses Masuk Keranjang', 'Success');
         return redirect('check-out');
 
     }
@@ -107,10 +107,8 @@ class PesanController extends Controller
 
     public function konfirmasi()
     {
-     
 
-
-        $pesanan = Pesanan::where('user_id',Auth::user()->id)->first();
+        $pesanan = Pesanan::where('user_id', Auth::user()->id)->first();
         $pesanan_id = $pesanan->id;
         $pesanan->status = 1;
         $pesanan->update();

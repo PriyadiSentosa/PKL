@@ -185,7 +185,7 @@
 						@foreach($barang as $data)
 						<div class="col-md-4">
 							<div class="card">
-							<center><img src="{{$data->image()}}" alt=""  class="card-img-top" style="width:100px; height:100px;" alt="cover"></center>	
+							<center><img src="{{$data->image()}}" alt=""  class="card-img-top" style="width:100px; height:100px;" alt="cover"></center>
 							  <div class="card-body">
 								<h5 class="card-title">{{ $data->nama_barang }}</h5>
 								<p class="card-text">
@@ -421,5 +421,7 @@
 	<!-- main js -->
 	<script src="{{asset('frontend/assets/js/main.js')}}"></script>
 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+@include('sweet::alert')
 </body>
 </html>
